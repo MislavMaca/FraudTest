@@ -14,7 +14,7 @@ using std::chrono::duration_cast;
 using std::chrono::high_resolution_clock;
 using std::chrono::microseconds;
 
-void printFile(const vector<string> &data) {
+void printData(const vector<string> &data) {
   for (const auto &it : data) {
     std::cout << it << " ";
   }
@@ -59,7 +59,7 @@ public:
     auto it = data.find(row);
     if (it != data.end() && it->first == row) {
       std::cout << it->first << " ";
-      printFile(it->second);
+      printData(it->second);
       return it->first;
     }
     std::cout << "No results found." << std::endl;
@@ -118,7 +118,7 @@ public:
     for (auto it = data.rbegin(); it != data.rend() && count < n;
          ++it, ++count) {
       std::cout << it->first << " ";
-      printFile(it->second);
+      printData(it->second);
     }
   }
 
@@ -126,7 +126,7 @@ public:
     int count = 0;
     for (auto it = data.begin(); it != data.end() && count < n; ++it, ++count) {
       std::cout << it->first << " ";
-      printFile(it->second);
+      printData(it->second);
     }
   }
 
